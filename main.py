@@ -9,9 +9,7 @@ def main():
         lowered = file_contents.lower()
 
         char = {}
-        cc = [
-            {"letter": 'a', "num": 7}
-        ]
+        cc = []
 
         for chars in lowered:
             if chars.isalpha():
@@ -22,16 +20,26 @@ def main():
             else:
                 pass
 
+
+        for key in char:
+            num = char[key]
+            cc.append({'char': key, 'num': num})
+        
+        cc.sort(reverse=True, key=sort_on)
+
         print(
             "--- Begin report of books/frankenstein.txt --- \n", 
             f"{wc} words found in the document \n\n",
             )
         
-        for letter in char:
-            print(f"The '{letter}' character was found {char[letter]} number of times")
+        for letter in cc:
+            print(f"The {letter} character was found {0} times")
 
         print("--- End Report --- \n")
 
         return
+
+def sort_on(dict):
+    return dict['num']
 
 main()
