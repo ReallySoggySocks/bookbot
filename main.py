@@ -33,7 +33,7 @@ def main():
             )
         
         for letter in cc:
-            print(f"The {letter} character was found {0} times")
+            print(f"The '{letter['char']}' character was found {letter['num']} times")
 
         print("--- End Report --- \n")
 
