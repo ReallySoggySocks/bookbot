@@ -7,8 +7,18 @@ def get_book_text(file_path):
 	return file_contents
 
 def main():
-	file_text = get_book_text("books/frankenstein.txt")
-	print(f"{word_count(file_text)} words found in the document")
-	print(sorted_list(get_char(file_text)))
+	file_path = "books/frankenstein.txt"
+	file_text = get_book_text(file_path)
+	wc = word_count(file_text)
+	char_list = sorted_list(get_char(file_text))
+
+	print("============ BOOKBOT ============")
+	print(f"Analyzing book found at {file_path}...")
+	print("----------- Word Count ----------")
+	print(f"Found {wc} total words")
+	print("--------- Character Count -------")
+	for dict in char_list:
+		print(f'{dict["char"]}: {dict["num"]}')
+	print("============= END ===============")
 
 main()
