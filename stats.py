@@ -20,3 +20,17 @@ def get_char(text):
 			else:
 				chars[c] += 1
 	return chars
+
+def sorted_list(dictionary):
+	def sort_on(dict):
+		return dict["num"]
+
+	sort = []
+
+	for key in dictionary:
+		if key.isalpha():
+			sort.append({"char": key , "num" : dictionary[key]})
+	
+	sort.sort(reverse=True, key=sort_on)
+	
+	return sort
