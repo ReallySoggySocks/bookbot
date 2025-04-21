@@ -7,3 +7,16 @@ def word_count(text):
 		wc += 1
 	
 	return wc
+
+def get_char(text):
+	chars = {}
+	words = text.split()
+
+	for word in words:
+		for char in word:
+			c = char.lower()
+			if c not in chars:
+				chars[c] = 1
+			else:
+				chars[c] += 1
+	return chars
